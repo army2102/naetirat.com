@@ -1,0 +1,7 @@
+.activity-item {
+  margin-bottom: 1rem;
+}
+
+.activity-item:last-child {
+  margin-bottom: 0;
+}

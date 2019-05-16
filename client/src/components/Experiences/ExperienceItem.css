@@ -1,0 +1,13 @@
+.experience-item {
+  margin-bottom: 1rem;
+}
+
+.experience-item:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 500px) {
+  .experience-item .inline {
+    display: block;
+  }
+}

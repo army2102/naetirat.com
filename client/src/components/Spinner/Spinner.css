@@ -1,0 +1,25 @@
+.overlay {
+  background-color: rgba(black, 0.5);
+  z-index: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.spinner {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #d6d7d8;
+  border-radius: 50%;
+  border-top-color: #343a40;
+  animation: spinner 0.7s ease infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

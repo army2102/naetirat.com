@@ -1,0 +1,7 @@
+.education-item {
+  margin-bottom: 1rem;
+}
+
+.education-item:last-child {
+  margin-bottom: 0;
+}

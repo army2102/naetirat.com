@@ -1,0 +1,33 @@
+#profile-information #profile-pic {
+  display: block;
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+#profile-information #contact-information {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#profile-information #socials {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#profile-information #socials li {
+  margin: 0 1rem;
+}
+#profile-information #socials li i {
+  color: #2e3439;
+  font-size: 2rem;
+}
+
+@media (max-width: 500px) {
+  #profile-information #profile-pic {
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,7 @@
+.award-item {
+  margin-bottom: 1rem;
+}
+
+.award-item:last-child {
+  margin-bottom: 0;
+}

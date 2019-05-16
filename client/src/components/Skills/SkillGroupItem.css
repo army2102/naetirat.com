@@ -1,0 +1,7 @@
+.skill-group-item {
+  margin-bottom: 1rem;
+}
+
+.skill-group-item:last-child {
+  margin-bottom: 0;
+}
