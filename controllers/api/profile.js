@@ -47,7 +47,9 @@ const initProfile = {
             { skillName: 'CSS' },
             { skillName: 'SASS' },
             { skillName: 'JavaScript' },
-            { skillName: 'React' }
+            { skillName: 'React' },
+            { skillName: 'Redux' },
+            { skillName: 'Redux-Thunk' }
           ]
         },
         {
