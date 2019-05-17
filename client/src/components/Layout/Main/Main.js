@@ -4,7 +4,7 @@ import { fetchProfile } from '../../../actions';
 
 import Spinner from '../../Spinner/Spinner';
 import ProfileInfo from '../../ProfileInfo/ProfileInfo';
-import Goal from '../../Goal/Goal';
+import AboutMe from '../../AboutMe/AboutMe';
 import Educations from '../../Educations/Educations';
 import Skills from '../../Skills/Skills';
 import Experiences from '../../Experiences/Experiences';
@@ -25,7 +25,7 @@ class Main extends React.Component {
       contents = (
         <main>
           <ProfileInfo />
-          <Goal />
+          <AboutMe />
           <Educations />
           <Skills />
           <Experiences />

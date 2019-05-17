@@ -7,7 +7,7 @@ const profileSchema = new Schema({
   lastname: { type: String, required: true },
   phoneNumber: { type: String, required: true },
   email: { type: String, required: true },
-  description: { type: String },
+  aboutMe: { type: String },
   socials: [
     {
       socialName: { type: String, required: true },

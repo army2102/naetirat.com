@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Goal = ({ description }) => {
-  if (!description) {
+const AboutMe = ({ aboutMe }) => {
+  if (!aboutMe) {
     return null;
   }
 
@@ -10,20 +10,20 @@ const Goal = ({ description }) => {
     <section id="goal">
       <div className="card">
         <div className="card-header">
-          <h2 className="header">Goal</h2>
+          <h2 className="header">About Me</h2>
         </div>
         <div className="card-content">
-          <p className="text-justify">{description}</p>
+          <p className="text-justify">{aboutMe}</p>
         </div>
       </div>
     </section>
   );
 };
 
-const mapStateToProps = ({ profile: { description } }) => {
+const mapStateToProps = ({ profile: { aboutMe } }) => {
   return {
-    description
+    aboutMe
   };
 };
 
-export default connect(mapStateToProps)(Goal);
+export default connect(mapStateToProps)(AboutMe);

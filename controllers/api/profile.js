@@ -5,7 +5,7 @@ const initProfile = {
   lastname: 'Songsomboon',
   phoneNumber: '088-303-3924',
   email: 'naetirat.s@gmail.com',
-  description:
+  aboutMe:
     'It is my dream to be part of a team that develops a technology that makes the world a better place. I am passionate about learning; I am very eager to learn and to develop new skills both regarding theoretical and practical knowledge. I always set the bar high: once a goal has been established, I will go beyond the limit to reach it. Nevertheless, asking for help when getting stuck with a problem. Other than spending time in learning programming, I enjoy using my free time reading books and listening to music',
   socials: [
     {
