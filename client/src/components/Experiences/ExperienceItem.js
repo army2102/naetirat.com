@@ -11,14 +11,14 @@ const ExperienceItem = ({ experience }) => {
     const skillList = experience.skillSet.map((skill, index) => {
       return <span key={index}> {skill} </span>;
     });
-    skillSet = <div className="inline"> ( {skillList} )</div>;
+    skillSet = <div className="inline"> ( {skillList} )  </div>;
   }
   let projectUrl = null;
   if (experience.projectUrl) {
     projectUrl = (
-      <p>
-        <a href={experience.projectUrl}>( {experience.projectUrl} )</a>
-      </p>
+      <a href={experience.projectUrl} target="_blank" rel="noopener noreferrer">
+        ( {experience.projectUrl} )
+      </a>
     );
   }
 
