@@ -101,8 +101,31 @@ const initProfile = {
       },
       position: 'Software Developer Intern',
       additionalInformation: [
-        'Developed user interfaces, back-end APIs, and database queries according to the requirement'
+        'Developed user interfaces, back-end APIs, and database queries with K2 platform according to the requirement given by senior developers'
       ]
+    },
+    {
+      experienceName: 'Naetirat.com',
+      date: {
+        from: 'May 2019',
+        present: false
+      },
+      description:
+        'My own personal website that inspired by my resume. The goal of this project is to create a website with all the technology that I have learn from the past few month',
+      additionalInformation: [
+        'Developed a website using MERN stack with MVC file structure and deployed with Heroku'
+      ],
+      skillSet: [
+        'React',
+        'Redux',
+        'Redux-Thunk',
+        'NodeJS',
+        'Express',
+        'MongoDB',
+        'Mongoose',
+        'Heroku'
+      ],
+      projectUrl: 'http://naetirat.com'
     },
     {
       experienceName: 'FreeCodeCamp Responsive Web Design Projects',
@@ -110,10 +133,13 @@ const initProfile = {
         from: 'May 2019',
         present: false
       },
+      description:
+        'As part of the FreeCodeCamp curriculum, in order to get “ Responsive Web Design ” certificate',
       additionalInformation: [
-        'Developed a webpage according to the requirement ( codepen.io/collection/AQgrgy ) '
+        'Developed five webpages according to the instruction given from FreeCodeCamp “ Introduction to the Responsive Web Design Projects ” section'
       ],
-      skillSet: ['HTML', 'CSS', 'SASS']
+      skillSet: ['HTML', 'CSS', 'SASS'],
+      projectUrl: 'https://codepen.io/collection/AQgrgy'
     },
     {
       experienceName: 'Automatic Water Quality Control Via Smart Device',
@@ -122,8 +148,9 @@ const initProfile = {
         to: 'June 2018',
         present: false
       },
-      additionalInformation: [
+      description:
         'Measure water quality and automatically replacing water in a fish tank based on PH value and water temperature',
+      additionalInformation: [
         'Controlled all the sensors through NodeMCU, and developed the application with C++ and Blynk',
         'Modify the range of PH value and water temperature to define the water quality through the application',
         'Monitor PH value, water temperature and all the sensors status through a mobile application',
@@ -138,8 +165,9 @@ const initProfile = {
         to: 'December 2017',
         present: false
       },
-      additionalInformation: [
+      description:
         'Marketplace area reservation and management through a mobile application, served as a MVP application for Digital Innovation Startup Apprentice Batch 2 program',
+      additionalInformation: [
         'Analyzed and designed the system from the information gathered from three marketplaces',
         'Developed the application, back-end APIs, the database and deployment with JAVA, NodeJS, MySQL and Heroku'
       ],

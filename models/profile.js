@@ -56,8 +56,10 @@ const profileSchema = new Schema({
         present: { type: Boolean }
       },
       position: { type: String },
+      description: { type: String },
       additionalInformation: [String],
-      skillSet: [String]
+      skillSet: [String],
+      projectUrl: { type: String }
     }
   ],
   awards: [

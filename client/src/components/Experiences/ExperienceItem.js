@@ -2,19 +2,27 @@ import React from 'react';
 import './ExperienceItem.css';
 
 const ExperienceItem = ({ experience }) => {
-  let skillSet = null;
-  let date = null;
-  
   const addInfoList = experience.additionalInformation.map((addInfo, index) => {
     return <li key={index}>{addInfo}</li>;
   });
+
+  let skillSet = null;
   if (experience.skillSet.length !== 0) {
     const skillList = experience.skillSet.map((skill, index) => {
       return <span key={index}> {skill} </span>;
     });
     skillSet = <div className="inline"> ( {skillList} )</div>;
   }
+  let projectUrl = null;
+  if (experience.projectUrl) {
+    projectUrl = (
+      <p>
+        <a href={experience.projectUrl}>( {experience.projectUrl} )</a>
+      </p>
+    );
+  }
 
+  let date = null;
   if (experience.date) {
     if (experience.date.to) {
       date = (
@@ -36,9 +44,11 @@ const ExperienceItem = ({ experience }) => {
     <div className="experience-item">
       <h2 className="header inline">{experience.experienceName}</h2>
       {skillSet}
+      {projectUrl}
       {date}
       <p>{experience.address}</p>
       <p className="position">{experience.position}</p>
+      <p className="description">{experience.description}</p>
       <ul className="additional-information">{addInfoList}</ul>
     </div>
   );
