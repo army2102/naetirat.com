@@ -7,7 +7,8 @@ import ProfileInfo from '../../ProfileInfo/ProfileInfo';
 import AboutMe from '../../AboutMe/AboutMe';
 import Educations from '../../Educations/Educations';
 import Skills from '../../Skills/Skills';
-import Experiences from '../../Experiences/Experiences';
+import WorkExperiences from '../../WorkExperiences/WorkExperiences';
+import PersonalProjects from '../../PersonalProjects/PersonalProjects';
 import Awards from '../../Awards/Awards';
 import Activities from '../../Activities/Activities';
 
@@ -28,7 +29,8 @@ class Main extends React.Component {
           <AboutMe />
           <Educations />
           <Skills />
-          <Experiences />
+          <WorkExperiences />
+          <PersonalProjects />
           <Awards />
           <Activities />
         </main>

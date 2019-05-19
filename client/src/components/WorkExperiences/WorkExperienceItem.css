@@ -1,0 +1,7 @@
+.workExperience-item {
+  margin-bottom: 1rem;
+}
+
+.workExperience-item:last-child {
+  margin-bottom: 0;
+}

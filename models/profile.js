@@ -46,9 +46,25 @@ const profileSchema = new Schema({
       ]
     }
   ],
-  experiences: [
+  workExperiences: [
     {
-      experienceName: { type: String, required: true },
+      companyName: { type: String, required: true },
+      address: { type: String },
+      date: {
+        from: { type: String, required: true },
+        to: { type: String },
+        present: { type: Boolean }
+      },
+      position: { type: String },
+      description: { type: String },
+      additionalInformation: [String],
+      skillSet: [String],
+      projectUrl: { type: String }
+    }
+  ],
+  personalProjects: [
+    {
+      projectName: { type: String, required: true },
       address: { type: String },
       date: {
         from: { type: String, required: true },

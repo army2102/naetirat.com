@@ -4,7 +4,7 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer>
-      <p>Latest Update - 10:00 PM - 17/5/2019</p>
+      <p>Latest Update - 2:25 AM - 20/5/2019</p>
     </footer>
   );
 };

@@ -1,0 +1,7 @@
+.personalProject-item {
+  margin-bottom: 1rem;
+}
+
+.personalProject-item:last-child {
+  margin-bottom: 0;
+}

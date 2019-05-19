@@ -1,9 +1,9 @@
 const Profile = require('../../models/profile');
 
-const initProfile = {
+const INITIAL_PROFILE = {
   firstname: 'Naetirat',
   lastname: 'Songsomboon',
-  phoneNumber: '088-303-3924',
+  phoneNumber: '000-000-0000',
   email: 'naetirat.s@gmail.com',
   aboutMe:
     'It is my dream to be part of a team that develops a technology that makes the world a better place. I am passionate about learning; I am very eager to learn and to develop new skills both regarding theoretical and practical knowledge. I always set the bar high: once a goal has been established, I will go beyond the limit to reach it. Nevertheless, asking for help when getting stuck with a problem. Other than spending time in learning programming, I enjoy using my free time reading books and listening to music',
@@ -64,6 +64,14 @@ const initProfile = {
           ]
         },
         {
+          subGroupName: 'Deployment',
+          skills: [{ skillName: 'Heroku' }]
+        },
+        {
+          subGroupName: 'Version Control',
+          skills: [{ skillName: 'Git' }, { skillName: 'GitHub' }]
+        },
+        {
           subGroupName: 'Programming Languages',
           skills: [
             { skillName: 'JavaScript' },
@@ -92,9 +100,9 @@ const initProfile = {
       ]
     }
   ],
-  experiences: [
+  workExperiences: [
     {
-      experienceName: 'Arise Corporation Co., Ltd',
+      companyName: 'Arise Corporation Co., Ltd',
       address: 'Bangkok, Thailand',
       date: {
         from: 'May 2016',
@@ -105,9 +113,11 @@ const initProfile = {
       additionalInformation: [
         'Developed user interfaces, back-end APIs, and database queries with K2 platform according to the requirement given by senior developers'
       ]
-    },
+    }
+  ],
+  personalProjects: [
     {
-      experienceName: 'Naetirat.com',
+      projectName: 'Naetirat.com',
       date: {
         from: 'May 2019',
         present: false
@@ -130,7 +140,7 @@ const initProfile = {
       projectUrl: 'http://naetirat.com'
     },
     {
-      experienceName: 'FreeCodeCamp Responsive Web Design Projects',
+      projectName: 'FreeCodeCamp Responsive Web Design Projects',
       date: {
         from: 'May 2019',
         present: false
@@ -144,7 +154,7 @@ const initProfile = {
       projectUrl: 'https://codepen.io/collection/AQgrgy'
     },
     {
-      experienceName: 'Automatic Water Quality Control Via Smart Device',
+      projectName: 'Automatic Water Quality Control Via Smart Device',
       date: {
         from: 'April 2018',
         to: 'June 2018',
@@ -161,7 +171,7 @@ const initProfile = {
       skillSet: ['NodeMCU', 'C++', 'Blynk']
     },
     {
-      experienceName: 'Market Supplier Reservation Applications',
+      projectName: 'Market Supplier Reservation Applications',
       date: {
         from: 'July 2017',
         to: 'December 2017',
@@ -256,13 +266,17 @@ exports.getProfile = (req, res, next) => {
     .catch(err => res.status(404).json({ message: err }));
 };
 
+exports.updateProfile = (req, res, next) => {
+  Profile.findByIdAndUpdate();
+};
+
 exports.initProfile = (req, res, next) => {
   Profile.findOne()
     .then(profile => {
       if (profile) {
         throw 'There is already one profile in the database';
       }
-      const newProfile = new Profile(initProfile);
+      const newProfile = new Profile(INITIAL_PROFILE);
       newProfile
         .save()
         .then(result => {
