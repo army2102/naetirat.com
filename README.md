@@ -1,4 +1,4 @@
-# naetirat-io
+# naetirat.com
 A MERN stack website with MVC file structure and deployed with Heroku
 
 # How to use it
