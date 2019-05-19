@@ -1,5 +1,5 @@
-# naetirat-io
-The source code that I use on my personal resume website
+# naetirat.com
+A MERN stack website with MVC file structure and deployed with Heroku
 
 # How to use it
  - Clone it to your folder
