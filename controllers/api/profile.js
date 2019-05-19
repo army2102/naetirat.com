@@ -123,7 +123,7 @@ const INITIAL_PROFILE = {
         present: false
       },
       description:
-        'My own personal website that inspired by my resume. The goal of this project is to create a website with all the technology that I have learn from the past few month',
+        'My personal website that inspired from my resume. The goal of this project is to create a website with all the technology that I have learned from the past few months',
       additionalInformation: [
         'Developed a website using MERN stack with MVC file structure and deployed with Heroku'
       ],
@@ -180,8 +180,8 @@ const INITIAL_PROFILE = {
       description:
         'Marketplace area reservation and management through a mobile application, served as a MVP application for Digital Innovation Startup Apprentice Batch 2 program',
       additionalInformation: [
-        'Analyzed and designed the system from the information gathered from three marketplaces',
-        'Developed the application, back-end APIs, the database and deployment with JAVA, NodeJS, MySQL and Heroku'
+        'Developed a system and designed SQL database from the information gathered from three marketplaces',
+        'Developed an Android application, Backend APIs and deployed with Heroku'
       ],
       skillSet: ['JAVA', 'NodeJS', 'MySQL', 'Heroku']
     }
@@ -283,7 +283,7 @@ exports.initProfile = (req, res, next) => {
           res.status(201).json({ message: 'Profile created' });
         })
         .catch(err => {
-          console.log(err);
+          console.error(err);
         });
     })
     .catch(err => {

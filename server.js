@@ -30,14 +30,15 @@ if (process.env.NODE_ENV === 'production') {
 
 // Init Server
 const PORT = process.env.PORT || 3001;
+const MONGODB_URI = process.env.MONGODB_URI || 'INSERT_YOUR_DATABASE_URL_HERE'
 mongoose
-  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+  .connect(MONGODB_URI, { useNewUrlParser: true })
   .then(result => {
-    console.log('MongoDB Atlas connected...');
+    console.log('MongoDB connected...');
     app.listen(PORT, () => {
       console.log(`Backend server is running on port ${PORT}`);
     });
   })
   .catch(err => {
-    console.log(err);
+    console.error(err);
   });
