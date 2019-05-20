@@ -58,20 +58,16 @@ const profileSchema = new Schema({
       position: { type: String },
       description: { type: String },
       additionalInformation: [String],
-      skillSet: [String],
-      projectUrl: { type: String }
     }
   ],
   personalProjects: [
     {
       projectName: { type: String, required: true },
-      address: { type: String },
       date: {
         from: { type: String, required: true },
         to: { type: String },
         present: { type: Boolean }
       },
-      position: { type: String },
       description: { type: String },
       additionalInformation: [String],
       skillSet: [String],
