@@ -57,7 +57,7 @@ const profileSchema = new Schema({
       },
       position: { type: String },
       description: { type: String },
-      additionalInformation: [String],
+      additionalInformation: [String]
     }
   ],
   personalProjects: [
@@ -106,7 +106,11 @@ const profileSchema = new Schema({
       },
       additionalInformation: [String]
     }
-  ]
+  ],
+  password: {
+    type: String,
+    required: true
+  }
 });
 
 module.exports = mongoose.model('profile', profileSchema);
