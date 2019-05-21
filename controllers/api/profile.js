@@ -1,5 +1,8 @@
+const bcryptJS = require('bcryptjs');
 const Profile = require('../../models/profile');
 
+const ADMIN_PASSWORD =
+  process.env.ADMIN_PASSWORD || `INSERT_YOUR_ADMIN_PASSWORD_HERE`;
 const INITIAL_PROFILE = {
   firstname: 'Naetirat',
   lastname: 'Songsomboon',
@@ -276,17 +279,19 @@ exports.initProfile = (req, res, next) => {
       if (profile) {
         throw 'There is already one profile in the database';
       }
-      const newProfile = new Profile(INITIAL_PROFILE);
-      newProfile
-        .save()
-        .then(result => {
-          res.status(201).json({ message: 'Profile created' });
-        })
-        .catch(err => {
-          console.error(err);
-        });
+      return bcryptJS.hash(ADMIN_PASSWORD, 12);
+    })
+    .then(hashedPassword => {
+      const newProfile = new Profile({
+        ...INITIAL_PROFILE,
+        password: hashedPassword
+      });
+      return newProfile.save();
+    })
+    .then(result => {
+      res.status(201).json({ message: 'Profile created' });
     })
     .catch(err => {
-      res.status(409).json({ message: err });
+      res.status(409).json({ message: 'Something bad happened' });
     });
 };

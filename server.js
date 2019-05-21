@@ -17,7 +17,6 @@ app.use(morgan('tiny'));
 // Init Routes
 app.use('/api/profile', apiProfileRoutes);
 
-
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   // Set Static Folder
@@ -30,7 +29,7 @@ if (process.env.NODE_ENV === 'production') {
 
 // Init Server
 const PORT = process.env.PORT || 3001;
-const MONGODB_URI = process.env.MONGODB_URI || 'INSERT_YOUR_DATABASE_URL_HERE'
+const MONGODB_URI = process.env.MONGODB_URI || 'INSERT_YOUR_DATABASE_URL_HERE';
 mongoose
   .connect(MONGODB_URI, { useNewUrlParser: true })
   .then(result => {
