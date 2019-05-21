@@ -270,7 +270,7 @@ exports.getProfile = (req, res, next) => {
 };
 
 exports.updateProfile = (req, res, next) => {
-  Profile.findByIdAndUpdate();
+  // TODO: Create update profile api
 };
 
 exports.initProfile = (req, res, next) => {
