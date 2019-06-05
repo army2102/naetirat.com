@@ -271,6 +271,7 @@ exports.getProfile = (req, res, next) => {
 
 exports.updateProfile = (req, res, next) => {
   // TODO: Create update profile api
+  
 };
 
 exports.initProfile = (req, res, next) => {
