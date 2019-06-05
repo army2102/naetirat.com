@@ -1,9 +1,9 @@
-require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const CONFIG = require('./config/config');
 
 const app = express();
 
@@ -28,8 +28,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Init Server
-const PORT = process.env.PORT || 3001;
-const MONGODB_URI = process.env.MONGODB_URI || 'INSERT_YOUR_DATABASE_URL_HERE';
+const PORT = CONFIG.PORT;
+const MONGODB_URI = CONFIG.MONGODB_URI;
 mongoose
   .connect(MONGODB_URI, { useNewUrlParser: true })
   .then(result => {

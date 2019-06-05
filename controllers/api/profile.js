@@ -1,8 +1,8 @@
+const CONFIG = require('../../config/config');
 const bcryptJS = require('bcryptjs');
 const Profile = require('../../models/profile');
 
-const ADMIN_PASSWORD =
-  process.env.ADMIN_PASSWORD || `INSERT_YOUR_ADMIN_PASSWORD_HERE`;
+const ADMIN_PASSWORD = CONFIG.ADMIN_PASSWORD;
 const INITIAL_PROFILE = {
   firstname: 'Naetirat',
   lastname: 'Songsomboon',
@@ -271,7 +271,6 @@ exports.getProfile = (req, res, next) => {
 
 exports.updateProfile = (req, res, next) => {
   // TODO: Create update profile api
-  
 };
 
 exports.initProfile = (req, res, next) => {
