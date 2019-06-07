@@ -33,6 +33,10 @@ exports.updateProfile = (req, res, next) => {
     .catch(err => res.status(404).json({ message: err }));
 };
 
+exports.deleteProfile = (req, res, next) => {
+  
+}
+
 exports.initProfile = (req, res, next) => {
   Profile.findOne()
     .then(profile => {
