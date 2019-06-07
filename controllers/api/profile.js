@@ -34,8 +34,20 @@ exports.updateProfile = (req, res, next) => {
 };
 
 exports.deleteProfile = (req, res, next) => {
-  
-}
+  Profile.findOne()
+    .then(profile => {
+      if (!profile) {
+        throw 'There is no profile in the database, please initialize it first';
+      }
+
+      return profile.deleteOne();
+    })
+    .then(result => {
+      // TODO: return something more understandable
+      res.json(result);
+    })
+    .catch(err => res.status(404).json({ message: err }));
+};
 
 exports.initProfile = (req, res, next) => {
   Profile.findOne()
