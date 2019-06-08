@@ -1,5 +1,5 @@
-const CONFIG = require('../../config/config');
 const bcryptJS = require('bcryptjs');
+const CONFIG = require('../../config/config');
 const Profile = require('../../models/profile');
 
 const ADMIN_PASSWORD = CONFIG.ADMIN_PASSWORD;
