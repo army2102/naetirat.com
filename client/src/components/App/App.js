@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 
 import Header from '../layout/Header/Header';
@@ -8,11 +9,11 @@ import Footer from '../layout/Footer/Footer';
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <BrowserRouter>
         <Header />
         <Main />
         <Footer />
-      </div>
+      </BrowserRouter>
     );
   }
 }

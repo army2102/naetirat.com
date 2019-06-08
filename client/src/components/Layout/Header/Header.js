@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
@@ -9,17 +10,14 @@ const Header = () => {
         <span> Naetirat</span>
       </div>
       <div id="menu">
-        {/* <ul>
-          <a href="#">
-            <li>Menu</li>
-          </a>
-          <a href="#">
-            <li>Menu</li>
-          </a>
-          <a href="#">
-            <li>Menu</li>
-          </a>
-        </ul> */}
+        <ul>
+          <Link to="/">
+            <li>Profile</li>
+          </Link>
+          <Link to="/config">
+            <li>Config</li>
+          </Link>
+        </ul>
       </div>
     </nav>
   );
