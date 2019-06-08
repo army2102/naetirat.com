@@ -11,11 +11,12 @@ const Header = () => {
       </div>
       <div id="menu">
         <ul>
-          <Link to="/">
-            <li>Profile</li>
+          {/*  TODO: Implement current class to use with current page  */}
+          <Link to="/" className="current">
+            <li>PROFILE</li>
           </Link>
           <Link to="/config">
-            <li>Config</li>
+            <li>CONFIG</li>
           </Link>
         </ul>
       </div>

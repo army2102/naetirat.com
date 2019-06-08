@@ -25,8 +25,22 @@ nav #menu ul a {
   color: #fff;
 }
 
+.current {
+  /* TODO: Implement current class to use with current page */
+  /* background-color: white; */
+}
+
 @media (max-width: 500px) {
   nav {
     justify-content: center;
+    flex-direction: column;
+  }
+
+  nav #logo {
+    margin-bottom: 1rem;
+  }
+
+  nav #menu {
+    width: 100%;
   }
 }
