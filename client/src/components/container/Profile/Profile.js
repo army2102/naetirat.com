@@ -1,4 +1,5 @@
 import React from 'react';
+import './Profile.css'
 import { connect } from 'react-redux';
 import { fetchProfile } from '../../../actions';
 
@@ -25,7 +26,7 @@ class Profile extends React.Component {
     );
     if (this.props.profile && this.props.profile.length !== 0) {
       contents = (
-        <main>
+        <main className="profile">
           <ProfileInfo />
           <AboutMe />
           <Educations />

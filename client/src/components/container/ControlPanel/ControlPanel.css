@@ -1,8 +1,8 @@
-main {
+.control-panel {
   margin: 2rem;
 }
 
-h1,
-div {
+.control-panel h1,
+.control-panel div {
   text-align: center;
 }

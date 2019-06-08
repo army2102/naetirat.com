@@ -3,7 +3,7 @@ import './ControlPanel.css';
 
 const ControlPanel = props => {
   return (
-    <main>
+    <main className="control-panel">
       <h1>Control Panel</h1>
       <div>Under Construction...</div>
     </main>
