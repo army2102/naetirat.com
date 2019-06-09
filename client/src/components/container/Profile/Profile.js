@@ -1,7 +1,8 @@
 import React from 'react';
-import './Profile.css'
+import './Profile.css';
 import { connect } from 'react-redux';
 import { fetchProfile } from '../../../actions';
+import { isEmpty } from '../../../util/isEmpty';
 
 import Spinner from '../../util/Spinner/Spinner';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
@@ -24,7 +25,14 @@ class Profile extends React.Component {
         <Spinner />
       </main>
     );
-    if (this.props.profile && this.props.profile.length !== 0) {
+
+    if (!isEmpty(this.props.errorMessage)) {
+      contents = (
+        <main className="profile">
+          <div className="error-message">{this.props.errorMessage.data}</div>
+        </main>
+      );
+    } else {
       contents = (
         <main className="profile">
           <ProfileInfo />
@@ -42,8 +50,8 @@ class Profile extends React.Component {
   }
 }
 
-const mapStateToProps = ({ profile }) => {
-  return { profile };
+const mapStateToProps = ({ profile, errorMessage }) => {
+  return { profile, errorMessage };
 };
 
 export default connect(

@@ -6,14 +6,14 @@ const ADMIN_PASSWORD = CONFIG.ADMIN_PASSWORD;
 const INITIAL_PROFILE = CONFIG.INITIAL_PROFILE;
 
 exports.getProfile = (req, res, next) => {
-  Profile.find({ firstname: 'Naetirat' })
+  Profile.findOne()
     .then(profile => {
-      if (profile.length === 0) {
+      if (!profile) {
         throw 'There is no profile in the database';
       }
       res.status(200).json(profile);
     })
-    .catch(err => res.status(404).json({ message: err }));
+    .catch(err => res.status(404).json(err));
 };
 
 exports.updateProfile = (req, res, next) => {
@@ -30,7 +30,7 @@ exports.updateProfile = (req, res, next) => {
       res.json(result);
     })
 
-    .catch(err => res.status(404).json({ message: err }));
+    .catch(err => res.status(404).json(err));
 };
 
 exports.deleteProfile = (req, res, next) => {
@@ -44,9 +44,9 @@ exports.deleteProfile = (req, res, next) => {
     })
     .then(result => {
       // TODO: return something more understandable
-      res.json(result);
+      res.json({ message: 'Profile Deleted' });
     })
-    .catch(err => res.status(404).json({ message: err }));
+    .catch(err => res.status(404).json(err));
 };
 
 exports.initProfile = (req, res, next) => {
@@ -65,9 +65,10 @@ exports.initProfile = (req, res, next) => {
       return newProfile.save();
     })
     .then(result => {
-      res.status(201).json({ message: 'Profile created' });
+      res.status(201).json({ message: 'Profile Created' });
     })
     .catch(err => {
-      res.status(409).json({ message: 'Something bad happened' });
+      res.status(409).json(err);
     });
 };
+
