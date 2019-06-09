@@ -9,6 +9,7 @@ import {
 
 export const fetchProfile = () => async dispatch => {
   try {
+    // TODO: Refactor this
     dispatch({
       type: CLEAR_ERROR_MESSAGE
     });
@@ -28,6 +29,7 @@ export const fetchProfile = () => async dispatch => {
 
 export const initProfile = () => async dispatch => {
   try {
+    // TODO: Refactor this
     dispatch({
       type: CLEAR_ERROR_MESSAGE
     });
@@ -47,6 +49,7 @@ export const initProfile = () => async dispatch => {
 
 export const deleteProfile = () => async dispatch => {
   try {
+    // TODO: Refactor this
     dispatch({
       type: CLEAR_ERROR_MESSAGE
     });
