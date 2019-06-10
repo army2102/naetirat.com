@@ -23,6 +23,7 @@ class Profile extends React.Component {
   }
 
   onInitProfile = () => {
+    // TODO: fetch profile onto the page after initialized
     this.props.initProfile();
     this.props.fetchProfile();
   };
