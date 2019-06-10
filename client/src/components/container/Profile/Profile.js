@@ -1,10 +1,13 @@
 import React from 'react';
 import './Profile.css';
 import { connect } from 'react-redux';
-import { fetchProfile } from '../../../actions';
+import { fetchProfile, initProfile } from '../../../actions';
 import { isEmpty } from '../../../util/isEmpty';
 
 import Spinner from '../../util/Spinner/Spinner';
+import Button from '../../util/Button/Button';
+import FlashMessage from '../../util/FlashMessage/FlashMessage';
+import ContentCenter from '../../util/ContentCenter/ContentCenter';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import AboutMe from './AboutMe/AboutMe';
 import Educations from './Educations/Educations';
@@ -19,6 +22,11 @@ class Profile extends React.Component {
     this.props.fetchProfile();
   }
 
+  onInitProfile = () => {
+    this.props.initProfile();
+    this.props.fetchProfile();
+  };
+
   render() {
     let contents = (
       <main>
@@ -29,7 +37,12 @@ class Profile extends React.Component {
     if (!isEmpty(this.props.errorMessage)) {
       contents = (
         <main className="profile">
-          <div className="error-message">{this.props.errorMessage.data}</div>
+          <ContentCenter>
+            <div className="error-message">
+              <FlashMessage error message={this.props.errorMessage.data} />
+              <Button onClick={this.onInitProfile} text="Initialize Profile" />
+            </div>
+          </ContentCenter>
         </main>
       );
     } else {
@@ -56,5 +69,5 @@ const mapStateToProps = ({ profile, errorMessage }) => {
 
 export default connect(
   mapStateToProps,
-  { fetchProfile }
+  { fetchProfile, initProfile }
 )(Profile);

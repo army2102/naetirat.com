@@ -1,3 +1,9 @@
+.profile .error-message {
+  padding: 1rem;
+  text-align: center;
+  background-color: none;
+}
+
 /* Utility */
 .profile .card {
   background-color: #d6d7d8;

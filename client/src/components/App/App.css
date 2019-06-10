@@ -11,6 +11,10 @@ body {
   background-color: #eaebeb;
 }
 
+main {
+  margin-bottom: 8%;
+}
+
 ul {
   list-style: none;
 }
@@ -25,7 +29,7 @@ a:hover {
 }
 
 .section {
-  margin: 1rem 0;
+  margin: 1rem;
 }
 
 .inline {

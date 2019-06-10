@@ -4,6 +4,10 @@ import { isEmpty } from '../../../util/isEmpty';
 import { connect } from 'react-redux';
 import { initProfile, deleteProfile } from '../../../actions/index';
 
+import Button from '../../util/Button/Button';
+import FlashMessage from '../../util/FlashMessage/FlashMessage';
+import ContentCenter from '../../util/ContentCenter/ContentCenter';
+
 class ControlPanel extends React.Component {
   onInitProfile = () => {
     this.props.initProfile();
@@ -14,25 +18,34 @@ class ControlPanel extends React.Component {
   };
 
   render() {
-    let message = null;
+    let feedbackMessage = null;
     if (!isEmpty(this.props.errorMessage)) {
-      message = this.props.errorMessage.data;
+      feedbackMessage = (
+        <FlashMessage
+          className="feedback-message"
+          error
+          message={this.props.errorMessage.data}
+        />
+      );
     } else if (this.props.profile.hasOwnProperty('message')) {
-      message = this.props.profile.message;
+      feedbackMessage = (
+        <FlashMessage
+          className="feedback-message"
+          message={this.props.profile.message}
+        />
+      );
     }
 
     return (
       <main className="control-panel">
-        <h1>Control Panel</h1>
-        <div>{message}</div>
-        <div>
-          <h2>Init Profile</h2>
-          <button onClick={this.onInitProfile}>Init Profile</button>
-        </div>
-        <div>
-          <h2>Delete Profile</h2>
-          <button onClick={this.onDeleteProfile}>Delete Profile</button>
-        </div>
+        <ContentCenter>
+          <h1>CONTROL PANEL</h1>
+          {feedbackMessage}
+          <div className="button-wraper">
+            <Button onClick={this.onInitProfile} text="Initialize Profile" />
+            <Button onClick={this.onDeleteProfile} text="Delete Profile" />
+          </div>
+        </ContentCenter>
       </main>
     );
   }

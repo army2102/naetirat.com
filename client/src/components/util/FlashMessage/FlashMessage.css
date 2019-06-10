@@ -1,0 +1,18 @@
+.flash-message {
+  width: 400px;
+  text-align: center;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #90ee90;
+}
+
+.error {
+  background-color: palevioletred;
+}
+
+@media (max-width: 500px) {
+  .flash-message {
+    width: 250px;
+  }
+}
