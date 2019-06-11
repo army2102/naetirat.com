@@ -20,9 +20,13 @@ const AboutMe = ({ aboutMe }) => {
   );
 };
 
-const mapStateToProps = ({ profile: { aboutMe } }) => {
+const mapStateToProps = ({
+  profile: {
+    profile: { aboutMe }
+  }
+}) => {
   return {
-    aboutMe
+    aboutMe: aboutMe
   };
 };
 

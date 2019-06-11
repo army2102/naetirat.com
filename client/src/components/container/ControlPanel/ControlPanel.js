@@ -2,13 +2,21 @@ import React from 'react';
 import './ControlPanel.css';
 import { isEmpty } from '../../../util/isEmpty';
 import { connect } from 'react-redux';
-import { initProfile, deleteProfile } from '../../../actions/index';
+import {
+  initProfile,
+  deleteProfile,
+  clearProfileMessage
+} from '../../../actions/index';
 
 import Button from '../../util/Button/Button';
 import FlashMessage from '../../util/FlashMessage/FlashMessage';
 import ContentCenter from '../../util/ContentCenter/ContentCenter';
 
 class ControlPanel extends React.Component {
+  componentDidMount() {
+    // TODO: Find a better data flow (If needed because this delete text from response.data.message which doesn't seem right to me) 
+    this.props.clearProfileMessage();
+  }
   onInitProfile = () => {
     this.props.initProfile();
   };
@@ -27,7 +35,7 @@ class ControlPanel extends React.Component {
           message={this.props.errorMessage.data}
         />
       );
-    } else if (this.props.profile.hasOwnProperty('message')) {
+    } else if (this.props.profile.message !== '') {
       feedbackMessage = (
         <FlashMessage
           className="feedback-message"
@@ -60,5 +68,5 @@ const mapStateToProps = ({ profile, errorMessage }) => {
 
 export default connect(
   mapStateToProps,
-  { initProfile, deleteProfile }
+  { initProfile, deleteProfile, clearProfileMessage }
 )(ControlPanel);

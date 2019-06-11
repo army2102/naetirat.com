@@ -27,7 +27,11 @@ const WorkExperiences = ({ workExperiences }) => {
   );
 };
 
-const mapStateToProps = ({ profile: { workExperiences } }) => {
+const mapStateToProps = ({
+  profile: {
+    profile: { workExperiences }
+  }
+}) => {
   return { workExperiences };
 };
 

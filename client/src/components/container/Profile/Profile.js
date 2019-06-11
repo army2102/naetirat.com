@@ -23,14 +23,12 @@ class Profile extends React.Component {
   }
 
   onInitProfile = () => {
-    // TODO: fetch profile onto the page after initialized
     this.props.initProfile();
-    this.props.fetchProfile();
   };
 
   render() {
     let contents = (
-      <main>
+      <main className="profile">
         <Spinner />
       </main>
     );
@@ -46,7 +44,7 @@ class Profile extends React.Component {
           </ContentCenter>
         </main>
       );
-    } else {
+    } else if (!isEmpty(this.props.profile.profile)) {
       contents = (
         <main className="profile">
           <ProfileInfo />
@@ -57,6 +55,12 @@ class Profile extends React.Component {
           <PersonalProjects />
           <Awards />
           <Activities />
+        </main>
+      );
+    } else {
+      contents = (
+        <main className="profile">
+          <Spinner />
         </main>
       );
     }

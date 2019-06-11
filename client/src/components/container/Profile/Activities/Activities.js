@@ -21,7 +21,11 @@ const Activities = ({ activities }) => {
   );
 };
 
-const mapStateToProps = ({ profile: { activities } }) => {
+const mapStateToProps = ({
+  profile: {
+    profile: { activities }
+  }
+}) => {
   return { activities };
 };
 

@@ -44,7 +44,11 @@ const ProfileInfo = ({ socials, email }) => {
   );
 };
 
-const mapStateToProps = ({ profile: { email, socials } }) => {
+const mapStateToProps = ({
+  profile: {
+    profile: { email, socials }
+  }
+}) => {
   return {
     email,
     socials

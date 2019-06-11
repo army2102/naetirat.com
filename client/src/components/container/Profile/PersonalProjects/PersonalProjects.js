@@ -26,7 +26,11 @@ const PersonalProjects = ({ personalProjects }) => {
   );
 };
 
-const mapStateToProps = ({ profile: { personalProjects } }) => {
+const mapStateToProps = ({
+  profile: {
+    profile: { personalProjects }
+  }
+}) => {
   return { personalProjects };
 };
 

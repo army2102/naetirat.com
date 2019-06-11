@@ -21,7 +21,11 @@ const Awards = ({ awards }) => {
   );
 };
 
-const mapStateToProps = ({ profile: { awards } }) => {
+const mapStateToProps = ({
+  profile: {
+    profile: { awards }
+  }
+}) => {
   return { awards };
 };
 

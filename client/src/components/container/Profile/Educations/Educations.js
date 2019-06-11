@@ -22,7 +22,11 @@ const Educations = ({ educations }) => {
   );
 };
 
-const mapStateToProps = ({ profile: { educations } }) => {
+const mapStateToProps = ({
+  profile: {
+    profile: { educations }
+  }
+}) => {
   return { educations };
 };
 

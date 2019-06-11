@@ -21,7 +21,11 @@ const Skills = ({ skillGroups }) => {
   );
 };
 
-const mapStateToProps = ({ profile: { skillGroups } }) => {
+const mapStateToProps = ({
+  profile: {
+    profile: { skillGroups }
+  }
+}) => {
   return { skillGroups };
 };
 

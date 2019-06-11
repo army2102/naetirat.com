@@ -11,7 +11,7 @@ exports.getProfile = (req, res, next) => {
       if (!profile) {
         throw 'There is no profile in the database';
       }
-      res.status(200).json(profile);
+      res.status(200).json({ profile, message: 'Fetch Sucess' });
     })
     .catch(err => res.status(404).json(err));
 };
@@ -27,6 +27,7 @@ exports.updateProfile = (req, res, next) => {
       return profile.updateOne(req.body);
     })
     .then(result => {
+      // TODO: Return something that is consistent with other APIs in this file
       res.json(result);
     })
 
@@ -44,7 +45,7 @@ exports.deleteProfile = (req, res, next) => {
     })
     .then(result => {
       // TODO: return something more understandable
-      res.json({ message: 'Profile Deleted' });
+      res.json({ profile: {}, message: 'Profile Deleted' });
     })
     .catch(err => res.status(404).json(err));
 };
@@ -65,10 +66,9 @@ exports.initProfile = (req, res, next) => {
       return newProfile.save();
     })
     .then(result => {
-      res.status(201).json({ message: 'Profile Created' });
+      res.status(201).json({ profile: result, message: 'Profile Created' });
     })
     .catch(err => {
       res.status(409).json(err);
     });
 };
-

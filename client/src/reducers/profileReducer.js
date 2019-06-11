@@ -1,6 +1,14 @@
-import { FETCH_PROFILE, INIT_PROFILE, DELETE_PROFILE } from '../actions/types';
+import {
+  FETCH_PROFILE,
+  INIT_PROFILE,
+  DELETE_PROFILE,
+  CLEAR_PROFILE_MESSAGE
+} from '../actions/types';
 
-const initialState = {};
+const initialState = {
+  profile: {},
+  message: ''
+};
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -10,6 +18,8 @@ export default (state = initialState, action) => {
       return action.payload;
     case DELETE_PROFILE:
       return action.payload;
+    case CLEAR_PROFILE_MESSAGE:
+      return { ...state, message: '' };
     default:
       return state;
   }
