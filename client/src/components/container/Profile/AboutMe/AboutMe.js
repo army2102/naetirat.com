@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import EditButton from '../../../util/EditButton/EditButton';
 
 const AboutMe = ({ aboutMe }) => {
   if (!aboutMe) {
@@ -15,6 +16,7 @@ const AboutMe = ({ aboutMe }) => {
         <div className="card-content">
           <p className="text-justify">{aboutMe}</p>
         </div>
+        <EditButton text="Edit" />
       </div>
     </section>
   );
