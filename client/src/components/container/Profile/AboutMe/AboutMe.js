@@ -2,25 +2,37 @@ import React from 'react';
 import { connect } from 'react-redux';
 import EditButton from '../../../util/EditButton/EditButton';
 
-const AboutMe = ({ aboutMe }) => {
-  if (!aboutMe) {
-    return null;
-  }
+class AboutMe extends React.Component {
+  state = {
+    isEdit: false
+  };
 
-  return (
-    <section id="goal">
-      <div className="card">
-        <div className="card-header">
-          <h2 className="header">About Me</h2>
+  onEditButtonClick = () => {
+    this.setState({ isEdit: !this.state.isEdit });
+  };
+
+  render() {
+    const { aboutMe } = this.props;
+    if (!aboutMe) {
+      return null;
+    }
+
+    return (
+      <section id="goal">
+        <div className="card">
+          <div className="card-header">
+            <h2 className="header">About Me</h2>
+          </div>
+          <div className="card-content">
+            <p className="text-justify">{aboutMe}</p>
+          </div>
+          <EditButton onClick={this.onEditButtonClick} text="Edit" />
+          {this.state.isEdit ? <div>Edit section</div> : null}
         </div>
-        <div className="card-content">
-          <p className="text-justify">{aboutMe}</p>
-        </div>
-        <EditButton text="Edit" />
-      </div>
-    </section>
-  );
-};
+      </section>
+    );
+  }
+}
 
 const mapStateToProps = ({
   profile: {
